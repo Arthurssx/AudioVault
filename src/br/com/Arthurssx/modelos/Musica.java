@@ -1,6 +1,6 @@
 package br.com.Arthurssx.modelos;
 
-public class Musica extends Audio{
+public class Musica extends Audio {
     private String album;
     private String artista;
     private String genero;
@@ -29,16 +29,24 @@ public class Musica extends Audio{
         this.artista = artista;
     }
 
+    // Reproduções de 0 a 800 = nota 5, de 801 a 2000 = nota 8, a partir de 2001 = nota 10
     @Override
-    public int getClassificacao() {
-        if(this.getTotalReproducoes() > 2000) {
+    public int calcularClassificacao() {
+        if (this.getTotalReproducoes() > 2000) {
             return 10;
-        }
-        else if(this.getTotalReproducoes() > 800) {
+        } else if (this.getTotalReproducoes() > 800) {
             return 8;
-        }
-        else {
+        } else {
             return 5;
         }
+    }
+
+    @Override
+    public void exibirFichaTecnica() {
+        System.out.println("MÚSICA");
+        super.exibirFichaTecnica();
+        System.out.println("Artista: " + getArtista());
+        System.out.println("Álbum: " + getAlbum());
+        System.out.println("Gênero: " + getGenero());
     }
 }

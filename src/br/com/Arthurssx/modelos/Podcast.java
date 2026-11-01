@@ -1,6 +1,6 @@
 package br.com.Arthurssx.modelos;
 
-public class Podcast extends Audio{
+public class Podcast extends Audio {
     private String apresentador;
     private String descricao;
 
@@ -20,16 +20,23 @@ public class Podcast extends Audio{
         this.apresentador = apresentador;
     }
 
+    // Curtidas de 0 a 300 = nota 5, de 301 a 500 = nota 8, a partir de 501 = nota 10
     @Override
-    public int getClassificacao() {
-        if(this.getTotalCurtidas()>500) {
+    public int calcularClassificacao() {
+        if (this.getTotalCurtidas() > 500) {
             return 10;
-        }
-        else if ( this.getTotalCurtidas() > 300){
+        } else if (this.getTotalCurtidas() > 300) {
             return 8;
-        }
-        else {
+        } else {
             return 5;
         }
+    }
+
+    @Override
+    public void exibirFichaTecnica() {
+        System.out.println("PODCAST");
+        super.exibirFichaTecnica();
+        System.out.println("Apresentador: " + getApresentador());
+        System.out.println("Descrição: " + getDescricao());
     }
 }
