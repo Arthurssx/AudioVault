@@ -5,7 +5,7 @@ import br.com.Arthurssx.modelos.Musica;
 import br.com.Arthurssx.modelos.Podcast;
 
 public class Principal {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Musica minhaMusica = new Musica();
         minhaMusica.setTitulo("Canção do Sol");
         minhaMusica.setArtista("Henrique Mendonça");
@@ -15,8 +15,6 @@ public class Principal {
 
         for (int i = 0; i < 1000; i++) {
             minhaMusica.reproduzir();
-        }
-        for (int i = 0; i < 1000; i++) {
             minhaMusica.curtir();
         }
 
@@ -28,8 +26,6 @@ public class Principal {
 
         for (int i = 0; i < 1000; i++) {
             podcast.curtir();
-        }
-        for (int i = 0; i < 1000; i++) {
             podcast.reproduzir();
         }
 

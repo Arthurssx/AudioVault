@@ -15,7 +15,7 @@ public class Audio {
         if (titulo == null || titulo.isBlank()) {
             throw new IllegalArgumentException("O título deve conter texto.");
         }
-        this.titulo = titulo.trim();
+        this.titulo = titulo.strip();
     }
 
     public int getTotalReproducoes() {
